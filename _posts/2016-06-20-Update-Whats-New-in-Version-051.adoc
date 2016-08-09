@@ -1,0 +1,164 @@
+= Update: What's New in Version 0.5.1
+:hp-tags: release
+:toc: macro
+:release: 0.5.1
+:published_at: 2016-06-20
+
+It's time for a new release of HubPress, which bumps the version up to {release}. 
+
+If you're looking for more information, all new features are highlighted in the docs with `{release}`. 
+
+A *"What's New"* video is also coming where we'll show you quickly about the changes.
+Subscribe to our new https://www.youtube.com/channel/UCNsNq3EoNCHGAD_h7eXlGrA[YouTube Channel] for more updates.
+
+IMPORTANT: There are breaking changes in this release that affect themes. 
+Make sure you read these Release Notes in their entirety before reporting any bugs.
+
+toc::[]
+
+== Upgrade your instance
+
+First, make sure that you have saved all your blog posts.
+Every unsaved draft will be lost because we have changed the storage system in this version.
+
+To upgrade your instance you have to create a pull request on your repository.
+Go to:
+
+```shell
+https://github.com/<username>/<repository-name>/compare/<branch>...HubPress:<branch>
+```
+
+For example for our blog, the username is *HubPress*, the repository name is *blog.hubpress.io* and we use the branch *gh-pages*, so the url is:
+
+```shell
+https://github.com/HubPress/blog.hubpress.io/compare/gh-pages...HubPress:gh-pages
+```
+
+If you use the branch master like Jared does (his username is *jaredmorgs*, the repository name is *jaredmorgs.github.io*):
+
+```shell
+https://github.com/jaredmorgs/jaredmorgs.github.io/compare/master...HubPress:master
+```
+
+Then you have to create a pull request with the listed changes and merge it.
+
+The last action is to log into your HubPress administration console. 
+Go to the *Settings* page and *Save*. 
+This action rebuilds all your blog posts with the improvements featured in this blog. 
+
+And voilà!
+
+== Themes
+
+WARNING: Breaking Change. Action required.
+
+Release 0.4.0 added two new themese: ghostium and uno-zen. 
+
+What we noticed is that the theme folders used a mixture of upper and lower case, which made it tricky to set the theme correctly in the Admin console.
+
+In {release} *all theme names have been changed to lowercase*. 
+This is breaking change, and you will need to check that the theme you've chosen in the Settings are lowercase.
+
+Refer to the folder names in the `/themes` folder in your repository, or in the `Administration.adoc` Admin Guide. 
+
+== Multi-user Support for Post Attribution
+
+Technically, HubPress already allowed to you set a collaborator on your repo so more than one user could write posts. 
+
+What HubPress didn't do was honour the post creator (author) if the settings were changed, and the site was regenerated. 
+
+With {release}, if you write a blog post, your GitHub user name will always be attached to the post. 
+
+If you create a blog post, then another blogger on your team publishes it, the person who originally created the post is credited with writing the post.
+
+In a future release, we plan on enhancing how writer attribution is handled in the post, so stay tuned.
+
+== Author page
+
+With the *{release}* release, the author page is now available!
+
+The author page regroups all the posts for a specific author.
+
+Here is an example from our blog:
+
+image::https://cloud.githubusercontent.com/assets/2006548/16178446/304c1ff8-3648-11e6-9928-e19aaba8423c.png[]
+
+== Edit and Delete Blog Posts
+
+You no longer have to "delete" blogs posts by reusing an unwanted, unpublished blog post. 
+
+The action overflow (three dots menu) next to each of your posts now has a `Delete` button.
+
+image::https://cloud.githubusercontent.com/assets/2006548/16179033/30283216-365a-11e6-8461-425fa0908f25.gif[]
+
+== Synchronization
+
+Previous releases required you to reauthenticate in the HubPress Administration Console to synchronize your local content.
+
+With the {release} release, we introduce the *Synchronize button*:
+
+image::https://cloud.githubusercontent.com/assets/2006548/16179319/e97d23e6-3661-11e6-8f6b-e69de0026c51.gif[]
+
+== Solarized theme
+
+Solarized is now the default theme for the editor, you can switch easily between light and dark with one button:
+
+image::https://cloud.githubusercontent.com/assets/2006548/16179640/8f0864d4-366b-11e6-8551-470443375de8.gif[]
+
+== Includes
+
+You can now use includes in your AsciiDoc content:
+
+image::https://cloud.githubusercontent.com/assets/2006548/16184165/4012ec6a-36ba-11e6-8df4-01b26737c82d.png[]
+
+== Gist
+
+Developers use gist to store code snippets, and with {release} you can now use the gist macro to integrate those snippets in your post.
+
+For example with the gist https://gist.github.com/anthonny/7786310 the usage is as follows:
+
+image::https://cloud.githubusercontent.com/assets/2006548/16184313/bf71edac-36bb-11e6-8acc-bcc779964fbc.png[]
+
+== Editor Validation for Blog Posts
+
+In versions prior to {release}, if you didn't have a Level 1 heading starting your blog post, you were not able to save your blog post. The error that displayed as a result of this was not clear, which caused frustration for some users.
+
+In {release}, the editor now has basic validation built-in.
+If you don't start your blog with a Level 1 heading, there are no Preview or Save buttons in the editor. This is a visual clue to check your blog structure. 
+
+If you want some tips on writing successful blog posts with HubPress, check out the _Writers' Guide_ in your repository.
+
+== Documentation 
+
+The documentation for HubPress has undergone further improvements to better align the content.
+
+The Administration guide has had a content shuffle to remove information that should have been in the Writer's Guide.
+
+The Writer's Guide had some stray Administration content in it, which has now been moved into it's proper home.
+
+Check out the docs and let us know if you see room for improvement. 
+
+== Documentation Moving to GitBook
+
+Look out for the HubPress docs you see in your forked repository on https://gitbook.com in the very near future. 
+
+GitBook are huge supporters of Open Source projects, and make managing documentation for your project or your organisation easy. 
+The team has been very generous in offering HubPress an Open Source license to use for our GitHub organisation.
+
+This allows Jared to separate documentation updates from code releases, and allows you to make in-line comments directly on the hosted docs. 
+No Pull Request required.
+It's an easy way to provide quick feedback on the documentation, so the team can make improvements in rapid iteration.
+
+Jared will migrate the user guides currently in your repository over to https://www.gitbook.com/@hubpress/ and will re-align the README.adoc with links to these new resources.  
+
+== Donations
+
+HubPress is now on https://gratipay.com/hubpress/[Gratipay]! 
+
+image::https://cloud.githubusercontent.com/assets/2006548/12901016/7b09da22-ceb9-11e5-93f7-16ab135b2e2e.png[]
+
+It's not the only way you can help us, but it is certainly a welcome one. 
+Donations are a great way to show your appreciation for the platform: it inspires us to dedicate extra time away from our families and day jobs to make HubPress an awesome blogging platform for you.
+
+image::https://cloud.githubusercontent.com/assets/2006548/16184450/bf6fbcca-36bc-11e6-940f-c00e3ba170ec.png[]
+

@@ -1,0 +1,43 @@
+= Update: What's new in Version 0.2.0
+:hp-tags: release
+:published_at: 2015-03-15
+:url-hubpress: http://hubpress.io/
+:url-changelog: https://github.com/HubPress/hubpress.io/blob/master/CHANGELOG.adoc
+
+An updated version of {url-hubpress}[HubPress] is now available with the following new features:
+
+== New feature: Syntax Highlighting
+Most users of {url-hubpress}[HubPress] are tech bloggers and find themselves writing many command-line examples in the blog posts they write. Code Highlighting is now implemented in  {url-hubpress}[HubPress].
+
+[source, javascript,indent=0]
+----
+function copyit(theField) {
+  var selectedText = document.selection;
+  if (selectedText.type == 'Text') {
+    var newRange = selectedText.createRange();
+    theField.focus();
+    theField.value = newRange.text;
+  }
+}
+----
+
+== New feature: Alternative Title
+If your native language does not use latin characters, you can now specify an alternative title that is used to build the URL of your blog post.
+
+This feature is enabled through a new attribute *hp-alt-title*: 
+[source, asciidoc]
+----
+= テストをしてください
+:hp-alt-title: Please test it
+----
+
+The URL format of the post is *http://myblog.com/2015/03/15/please-test-it.html* and the title in the blog post remains as *テストをしてください*
+
+== New feature: Tags generation
+No more 404 on the tags link! Tag page generation is now available.
+Tags pages are built when you publish a post and the site is re-paginated. It may take a short while for the tag cloud to update on your site.
+
+== Documentation
+Our documentation is now available in Chinese and Spanish: thanks to our dedicated community contributors!
+
+You can find all changes in the {url-changelog}[CHANGELOG]
